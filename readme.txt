@@ -1,0 +1,1 @@
+index is put outside so the netlify can recognize the index.html instead of forcing it to go through folders and being janky

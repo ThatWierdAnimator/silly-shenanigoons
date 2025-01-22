@@ -1,0 +1,14 @@
+@import url(../../DeterminationSansWebRegular-369X.ttf);
+
+:root {    
+    --bg-color: #000000;
+}
+
+* { 
+    color: white;    
+    font-family: 'DeterminationSansWebRegular';
+}
+body { 
+    background-color: var(--bg-color);
+    
+}
