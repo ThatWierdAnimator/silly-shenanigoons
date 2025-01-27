@@ -1,37 +1,37 @@
 const sectors = [
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
-  { color: "#ce1126", text: "#333333", label: "Find location :)" },
-  { color: "#006847", text: "#333333", label: "Find location :)" },
-  { color: "#ffffff", text: "#333333", label: "Find location :)" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "No location :(" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "No location :(" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
   { color: "#ce1126", text: "#333333", label: "No location :(" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "No location :(" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "No location :(" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "No location :(" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "No location :(" },
+  { color: "#ffffff", text: "#333333", label: "Find location ;)" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
+  { color: "#006847", text: "#333333", label: "Find location ;)" },
+  { color: "#ffffff", text: "#333333", label: "No location :(" },
+  { color: "#ce1126", text: "#333333", label: "Find location ;)" },
 ];
 
 const events = {
@@ -133,11 +133,29 @@ function init() {
 
 init();
 
+let password
+
 events.addListener("spinEnd", (sector) => {
   console.log(`Woop! You won ${sector.label}`);
+  setTimeout(() =>  document.getElementById("spin_the_wheel").style.display="none", 1000)
+  document.getElementById("won").innerText =`Woop! You won ${sector.label}`;
+
+  setTimeout(() =>  document.getElementById("blocker").style.display="none", 3000)
+  setTimeout(() =>  document.getElementById("won").style.display="none", 3000)
   setTimeout(() =>  document.getElementById("popup").style.display="none", 3000)
-  document.getElementById("spin").innerText =`Woop! You won ${sector.label}`;
+  
+  if(sector.label == "No location :("){
+    setTimeout(() =>  window.close() , 3000);
+  }
+
+  setTimeout(() => password = prompt("computer password?") ,  3000);
+  document.getElementById("inputed-password").innerText =` ${password}`;
+
+  
+  
 });
 
 
 
+
+        

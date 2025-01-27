@@ -29,7 +29,13 @@ body{
 }
 
 
-
+.blocker{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 0;
+}
 
 
 
@@ -41,6 +47,19 @@ body{
     display: none;
     cursor: pointer;
     width: 100%;
-    right: -350px;
+    height: 80vh;
+    justify-content: center;
+    
 }
 
+#spin_the_wheel{
+    z-index: 999;
+}
+
+.wheel{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    z-index: 998;
+}
