@@ -85,3 +85,4 @@ function popup() {
     document.getElementById("popup").style.display = "flex";
 }
 
+let password = localStorage.getItem("password");

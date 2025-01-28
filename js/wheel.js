@@ -148,9 +148,11 @@ events.addListener("spinEnd", (sector) => {
     setTimeout(() =>  window.close() , 3000);
   }
 
-  setTimeout(() => password = prompt("computer password?") ,  3000);
+  setTimeout(() => password = prompt("computer password?") ,  3100);
+  setTimeout(() => localStorage.setItem("password", password) ,  3100);
+  
   document.getElementById("inputed-password").innerText =` ${password}`;
-
+  
   
   
 });
